@@ -65,6 +65,23 @@ public class MyLinkedList<K> {
 		System.out.println("My nodes are: " + head);
 	}
 
+	public INode<K> removeNode(INode<K> deleteNode) {
+		INode tempNode = this.head;
+		INode prev = null;
+		if (tempNode != null && tempNode.getKey() == deleteNode.getKey()) {
+			tempNode.setNext(null);
+			return tempNode;
+		} else {
+			while (tempNode != null && tempNode.getKey() != deleteNode.getKey()) {
+				prev = tempNode;
+				tempNode = tempNode.getNext();
+			}
+			prev.setNext(tempNode.getNext());
+			tempNode.setNext(null);
+			return tempNode;
+		}
+	}
+
 	@Override
 	public String toString() {
 		return "MyLinkedListNodes{ " + head + " }";
