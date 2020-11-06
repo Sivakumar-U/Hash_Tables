@@ -10,7 +10,7 @@ public class MyHashMapTest {
 	@Test
 	public void giveASentence_whenWordsAreAddedToList_ShouldReturnWordFrequency() {
 		String sentence = "To be or not to be";
-		MyHashMap<String, Integer> myHashMap = new MyHashMap();
+		MyHashMap<String, Integer> myHashMap = new MyHashMap<String, Integer>();
 		String[] words = sentence.toLowerCase().split(" ");
 		for (String word : words) {
 			Integer value = myHashMap.get(word);
